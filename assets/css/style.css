@@ -687,22 +687,27 @@ footer a:hover {
 .swiper-wrapper {
   transition-timing-function: ease-in-out !important;
 }
-
 .custom-nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  text-align: center;
-  cursor: pointer;
   z-index: 10;
-  font-weight: bold;
-  font-size: 14px;
-  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.custom-nav i {
-  font-size: 16px;
-  margin-top: 0px;
+.custom-nav:hover {
+  background-color: #167D37;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .custom-nav.prev {
@@ -714,6 +719,9 @@ footer a:hover {
 }
 .custom-nav p{
   margin-bottom: 5px;
+}
+.ctstm-5{
+  margin: 40px 0;
 }
 .hidden {
   display: none !important;
