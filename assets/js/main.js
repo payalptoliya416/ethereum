@@ -226,3 +226,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // ----toggle menu end
   
+
+  // ---slider start
+   const swiper = new Swiper(".mySwiper", {
+      loop: false,
+      speed: 600, 
+      pagination:false,
+        // autoHeight: false,
+    });
+
+    const prevBtn = document.querySelector(".custom-nav.prev");
+    const nextBtn = document.querySelector(".custom-nav.next");
+
+    function updateNavButtons() {
+      const isFirst = swiper.activeIndex === 0;
+      const isLast = swiper.activeIndex === swiper.slides.length - 1;
+
+      prevBtn.classList.toggle("hidden", isFirst);
+      nextBtn.classList.toggle("hidden", isLast);
+    }
+
+    prevBtn.addEventListener("click", () => swiper.slidePrev());
+    nextBtn.addEventListener("click", () => swiper.slideNext());
+
+    swiper.on("slideChange", updateNavButtons);
+    updateNavButtons();
+  // ---slider end
