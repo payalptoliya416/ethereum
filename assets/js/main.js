@@ -228,28 +228,57 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
+  // ---swiper start
+
+function initSwiper() {
   const isMobile = window.innerWidth <= 575;
-   const swiper = new Swiper(".mySwiper", {
-      loop: false,
-      speed: 600, 
-      pagination:false,
-       autoHeight: isMobile,
-    });
 
-    const prevBtn = document.querySelector(".custom-nav.prev");
-    const nextBtn = document.querySelector(".custom-nav.next");
+  // Destroy existing swiper if already initialized
+  if (window.mySwiper) {
+    window.mySwiper.destroy(true, true);
+  }
 
-    function updateNavButtons() {
-      const isFirst = swiper.activeIndex === 0;
-      const isLast = swiper.activeIndex === swiper.slides.length - 1;
+  // Initialize Swiper
+  window.mySwiper = new Swiper(".mySwiper", {
+    loop: false,
+    speed: 600,
+    pagination: false,
+    autoHeight: isMobile, // Only apply autoHeight on small screens
+  });
 
-      prevBtn.classList.toggle("hidden", isFirst);
-      nextBtn.classList.toggle("hidden", isLast);
-    }
+  const prevBtn = document.querySelector(".custom-nav.prev");
+  const nextBtn = document.querySelector(".custom-nav.next");
 
-    prevBtn.addEventListener("click", () => swiper.slidePrev());
-    nextBtn.addEventListener("click", () => swiper.slideNext());
+  function updateNavButtons() {
+    const isFirst = window.mySwiper.activeIndex === 0;
+    const isLast = window.mySwiper.activeIndex === window.mySwiper.slides.length - 1;
 
-    swiper.on("slideChange", updateNavButtons);
+    prevBtn.classList.toggle("hidden", isFirst);
+    nextBtn.classList.toggle("hidden", isLast);
+  }
+
+  // Button events
+  prevBtn.addEventListener("click", () => window.mySwiper.slidePrev());
+  nextBtn.addEventListener("click", () => window.mySwiper.slideNext());
+
+  // Slide change actions
+  window.mySwiper.on("slideChange", () => {
     updateNavButtons();
-  // ---slider end
+
+    // Always scroll to top when slide changes
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  updateNavButtons();
+}
+
+// Initialize on page load
+window.addEventListener("load", initSwiper);
+
+// Optional: reinitialize on window resize for dynamic responsiveness
+window.addEventListener("resize", initSwiper);
+
+// ---swiper end
