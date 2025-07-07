@@ -700,7 +700,7 @@ footer a:hover {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.custom-nav i{
+.custom-nav i {
   font-size: 30px;
 }
 .custom-nav.prev {
@@ -710,10 +710,10 @@ footer a:hover {
 .custom-nav.next {
   right: 20px;
 }
-.custom-nav p{
+.custom-nav p {
   margin-bottom: 5px;
 }
-.ctstm-5{
+.ctstm-5 {
   margin: 40px 0;
 }
 .hidden {
@@ -751,7 +751,7 @@ footer a:hover {
   content: "\f30b";
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -5%;
   transform: translateY(-50%);
   color: #05101f;
   font-size: 16px;
@@ -767,7 +767,7 @@ footer a:hover {
   color: #c94343;
   text-transform: uppercase;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 24px;
   font-weight: 400;
   margin-bottom: 30px;
 }
@@ -788,9 +788,12 @@ footer a:hover {
 }
 .para {
   text-align: center;
-  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  text-align: center;
 }
-.swiper-info{
+.swiper-info {
   padding-top: 120px;
   text-align: center;
 }
@@ -800,5 +803,73 @@ footer a:hover {
   font-weight: 400;
   margin-bottom: 20px;
 }
+@media (max-width: 1024px) {
+  .slider-data::after {
+    right: -9%;
+  }
+  .slider-info .slid-img {
+    max-width: 174px;
+  }
 
+  .slider-data p,
+  .para {
+    font-size: 14px;
+  }
+}
+@media (max-width: 991px) {
+  .slider-info .slid-img {
+    max-width: 130px;
+  }
+  .slider-data::after {
+    right: -13%;
+  }
+  .slider-btm h3 {
+    font-size: 14px;
+    line-height: 22px;
+    margin-bottom: 20px;
+  }
+  .slider-btm .slider-btn-text h2 {
+    font-size: 14px;
+  }
+  .swiper-info p{
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .slider-info .slid-img-1 {
+    max-width: 200px;
+  }
+  .slider-data p {
+    height: 71px;
+  }
+  .slider-info .slid-img {
+    max-width: 114px;
+  }
+ 
+  .slider-data {
+    margin-bottom: 30px;
+  }
+  .after-none {
+    margin-bottom: 0;
+  }
+  .slider-data::after {
+    right: -18%;
+    top: 44%;
+    font-size: 12px;
+  }
+  .custom-nav i {
+    font-size: 20px;
+}
+}
+@media (max-width: 575px) {
+  .slider-info .slid-img {
+    max-width: 190px;
+  }
+  .slider-data::after {
+    content: none;
+  }
+   .slider-data p {
+    height: auto;
+  }
+}
 /* ---slider end */
