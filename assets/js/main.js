@@ -253,3 +253,24 @@ document.addEventListener("DOMContentLoaded", function () {
     swiper.on("slideChange", updateNavButtons);
     updateNavButtons();
   // ---slider end
+
+  // --steps for slider
+  const steps = document.querySelectorAll(".step");
+const progressLine = document.querySelector(".progress-line");
+
+function updateProgress(index) {
+  const stepPercent = (index) / (steps.length - 1) * 100;
+  progressLine.style.width = `${stepPercent}%`;
+
+  steps.forEach((step, i) => {
+    step.classList.toggle("active", i <= index);
+  });
+}
+
+// Call initially
+updateProgress(swiper.activeIndex);
+
+// On slide change
+swiper.on("slideChange", () => {
+  updateProgress(swiper.activeIndex);
+});
