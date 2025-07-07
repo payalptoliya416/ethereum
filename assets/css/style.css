@@ -79,8 +79,10 @@ body {
   font-family: "Inter";
 }
 
-.container {
-  max-width: 1536px !important;
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1536px !important;
+  }
 }
 
 .navbar-brand img {
@@ -692,24 +694,15 @@ footer a:hover {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 50%;
-  width: 42px;
-  height: 42px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
-.custom-nav:hover {
-  background-color: #167D37;
-  color: #fff;
-  transform: translateY(-50%) scale(1.1);
+.custom-nav i{
+  font-size: 30px;
 }
-
 .custom-nav.prev {
   left: 20px;
 }
@@ -750,6 +743,7 @@ footer a:hover {
   line-height: 20px;
   font-weight: 400;
   height: 50px;
+  text-align: center;
 }
 .slider-data::after {
   font-family: "Font Awesome 5 Free";
@@ -767,6 +761,7 @@ footer a:hover {
 }
 .slider-btm {
   margin: 20px 0;
+  text-align: center;
 }
 .slider-btm h3 {
   color: #c94343;
@@ -797,6 +792,7 @@ footer a:hover {
 }
 .swiper-info{
   padding-top: 120px;
+  text-align: center;
 }
 .swiper-info p {
   font-size: 16px;
