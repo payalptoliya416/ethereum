@@ -228,44 +228,44 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
-  // ---swiper start
+  // --- Swiper Start ---
+let swiper;
 
 function initSwiper() {
   const isMobile = window.innerWidth <= 575;
 
-  // Destroy existing swiper if already initialized
-  if (window.mySwiper) {
-    window.mySwiper.destroy(true, true);
-  }
+  // Destroy existing swiper instance (if any)
+  if (swiper) swiper.destroy(true, true);
 
-  // Initialize Swiper
-  window.mySwiper = new Swiper(".mySwiper", {
+  // Initialize new Swiper instance
+  swiper = new Swiper(".mySwiper", {
     loop: false,
     speed: 600,
     pagination: false,
-    autoHeight: isMobile, // Only apply autoHeight on small screens
+    autoHeight: isMobile, // Auto height only on mobile screens
   });
 
   const prevBtn = document.querySelector(".custom-nav.prev");
   const nextBtn = document.querySelector(".custom-nav.next");
 
+  // Update navigation buttons visibility
   function updateNavButtons() {
-    const isFirst = window.mySwiper.activeIndex === 0;
-    const isLast = window.mySwiper.activeIndex === window.mySwiper.slides.length - 1;
+    const isFirst = swiper.activeIndex === 0;
+    const isLast = swiper.activeIndex === swiper.slides.length - 1;
 
     prevBtn.classList.toggle("hidden", isFirst);
     nextBtn.classList.toggle("hidden", isLast);
   }
 
-  // Button events
-  prevBtn.addEventListener("click", () => window.mySwiper.slidePrev());
-  nextBtn.addEventListener("click", () => window.mySwiper.slideNext());
+  // Button click handlers
+  prevBtn.onclick = () => swiper.slidePrev();
+  nextBtn.onclick = () => swiper.slideNext();
 
-  // Slide change actions
-  window.mySwiper.on("slideChange", () => {
+  // Slide change event
+  swiper.on("slideChange", () => {
     updateNavButtons();
 
-    // Always scroll to top when slide changes
+    // Smooth scroll to top of the page on slide change
     window.scrollTo({
       top: 0,
       behavior: "smooth",
@@ -275,10 +275,12 @@ function initSwiper() {
   updateNavButtons();
 }
 
-// Initialize on page load
+// Initialize once on page load
 window.addEventListener("load", initSwiper);
 
-// Optional: reinitialize on window resize for dynamic responsiveness
+// Re-initialize if screen size changes (responsive)
 window.addEventListener("resize", initSwiper);
 
-// ---swiper end
+// --- Swiper End ---
+
+  // ---slider end
