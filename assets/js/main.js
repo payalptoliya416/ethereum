@@ -228,59 +228,28 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
-  // --- Swiper Start ---
-let swiper;
-
-function initSwiper() {
   const isMobile = window.innerWidth <= 575;
-
-  // Destroy existing swiper instance (if any)
-  if (swiper) swiper.destroy(true, true);
-
-  // Initialize new Swiper instance
-  swiper = new Swiper(".mySwiper", {
-    loop: false,
-    speed: 600,
-    pagination: false,
-    autoHeight: isMobile, // Auto height only on mobile screens
-  });
-
-  const prevBtn = document.querySelector(".custom-nav.prev");
-  const nextBtn = document.querySelector(".custom-nav.next");
-
-  // Update navigation buttons visibility
-  function updateNavButtons() {
-    const isFirst = swiper.activeIndex === 0;
-    const isLast = swiper.activeIndex === swiper.slides.length - 1;
-
-    prevBtn.classList.toggle("hidden", isFirst);
-    nextBtn.classList.toggle("hidden", isLast);
-  }
-
-  // Button click handlers
-  prevBtn.onclick = () => swiper.slidePrev();
-  nextBtn.onclick = () => swiper.slideNext();
-
-  // Slide change event
-  swiper.on("slideChange", () => {
-    updateNavButtons();
-
-    // Smooth scroll to top of the page on slide change
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+   const swiper = new Swiper(".mySwiper", {
+      loop: false,
+      speed: 600, 
+      pagination:false,
+       autoHeight: isMobile,
     });
-  });
 
-  updateNavButtons();
-}
+    const prevBtn = document.querySelector(".custom-nav.prev");
+    const nextBtn = document.querySelector(".custom-nav.next");
 
-// Initialize once on page load
-window.addEventListener("load", initSwiper);
+    function updateNavButtons() {
+      const isFirst = swiper.activeIndex === 0;
+      const isLast = swiper.activeIndex === swiper.slides.length - 1;
 
-// Re-initialize if screen size changes (responsive)
-window.addEventListener("resize", initSwiper);
+      prevBtn.classList.toggle("hidden", isFirst);
+      nextBtn.classList.toggle("hidden", isLast);
+    }
 
-// --- Swiper End ---
+    prevBtn.addEventListener("click", () => swiper.slidePrev());
+    nextBtn.addEventListener("click", () => swiper.slideNext());
 
+    swiper.on("slideChange", updateNavButtons);
+    updateNavButtons();
   // ---slider end
