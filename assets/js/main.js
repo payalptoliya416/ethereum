@@ -228,11 +228,12 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
+  const isMobile = window.innerWidth <= 575;
    const swiper = new Swiper(".mySwiper", {
       loop: false,
       speed: 600, 
       pagination:false,
-        // autoHeight: false,
+       autoHeight: isMobile,
     });
 
     const prevBtn = document.querySelector(".custom-nav.prev");

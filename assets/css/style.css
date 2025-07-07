@@ -871,5 +871,11 @@ footer a:hover {
    .slider-data p {
     height: auto;
   }
+  .custom-nav{
+   display: none;
+  }
+  .swiper-info{
+    padding-top: 80px;
+  }
 }
 /* ---slider end */
