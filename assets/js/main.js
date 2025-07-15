@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function () {
       loop: false,
       speed: 600, 
       pagination:false,
-       autoHeight: true,
+      autoHeight: false,
     });
 
     const prevBtn = document.querySelector(".custom-nav.prev");

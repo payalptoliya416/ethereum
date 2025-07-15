@@ -694,15 +694,34 @@ footer a:hover {
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s ease;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
+.custom-nav h6 {
+  font-size: 10px;
+  margin: 0;
+  line-height: 1;
+  color: #000000;
+  transition: color 0.3s ease;
+}
+
 .custom-nav i {
-  font-size: 30px;
+  font-size: 16px;
+  color: #000000;
+  margin-top: 4px;
+  transition: color 0.3s ease;
 }
+
 .custom-nav.prev {
   left: 20px;
 }
@@ -710,23 +729,29 @@ footer a:hover {
 .custom-nav.next {
   right: 20px;
 }
-.custom-nav p {
-  margin-bottom: 5px;
+
+.custom-nav:hover {
+  background-color: #000000;
 }
+
+.custom-nav:hover h6,
+.custom-nav:hover i {
+  color: #ffffff;
+}
+
 .ctstm-5 {
   margin: 40px 0;
 }
 .hidden {
   display: none !important;
 }
+.slider-info-pt {
+  padding-top: 100px;
+}
 .slider-info .slid-img {
-  width: 100%;
-  max-width: 250px;
   border-radius: 20px;
 }
 .slider-info .slid-img-1 {
-  width: 100%;
-  max-width: 300px;
   border-radius: 20px;
 }
 
@@ -794,7 +819,7 @@ footer a:hover {
   text-align: center;
 }
 .swiper-info {
-  padding-top: 50px;
+  padding-top: 100px;
   text-align: center;
 }
 .swiper-info p {
@@ -807,9 +832,6 @@ footer a:hover {
   .slider-data::after {
     right: -9%;
   }
-  .slider-info .slid-img {
-    max-width: 174px;
-  }
 
   .slider-data p,
   .para {
@@ -817,9 +839,6 @@ footer a:hover {
   }
 }
 @media (max-width: 991px) {
-  .slider-info .slid-img {
-    max-width: 130px;
-  }
   .slider-data::after {
     right: -13%;
   }
@@ -836,46 +855,87 @@ footer a:hover {
   }
 }
 @media (max-width: 767px) {
-  .slider-info .slid-img-1 {
-    max-width: 200px;
-  }
   .slider-data p {
-    height: 71px;
+    height: 46px;
   }
-  .slider-info .slid-img {
-    max-width: 114px;
-  }
-
   .slider-data {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
   }
   .after-none {
     margin-bottom: 0;
   }
   .slider-data::after {
-    right: -18%;
+    right: -13%;
     top: 44%;
     font-size: 12px;
   }
+  .slider-data p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .hero-sec {
+    padding-bottom: 0;
+    padding-top: 60px;
+  }
+  .swiper-info {
+    padding-top: 20px;
+  }
+  .swiper-info p {
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .slider-info-pt {
+    padding-top: 50px;
+  }
+}
+@media (max-width: 640px) {
+  .slider-btm h3 {
+    font-size: 12px;
+    line-height: 20px;
+  }
+  .hero-sec {
+    padding-bottom: 3px;
+  }
+  .slider-info .slid-img {
+    border-radius: 10px;
+  }
+  .slider-data::after {
+    right: -17%;
+  }
+  .custom-nav {
+    width: 40px;
+    height: 40px;
+  }
+  .custom-nav h6 {
+    font-size: 8px;
+  }
   .custom-nav i {
-    font-size: 20px;
+    font-size: 12px;
   }
 }
 @media (max-width: 575px) {
-  .slider-info .slid-img {
-    max-width: 190px;
-  }
   .slider-data::after {
-    content: none;
+    /* content: none; */
   }
   .slider-data p {
-    height: auto;
+    height: 91px;
   }
-  .custom-nav {
-    display: none;
+  .slider-data::after {
+    right: -25%;
   }
-  .swiper-info {
-    padding-top: 0px;
+}
+@media (max-width: 375px) {
+  .slider-data::after {
+    right: -31%;
+  }
+}
+@media (max-width: 360px) {
+  .slider-data p {
+    font-size: 11px;
+    line-height: 15px;
+  }
+  .slider-data::after {
+    right: -31%;
   }
 }
 /* ---slider end */
@@ -899,7 +959,7 @@ footer a:hover {
 .progress-line {
   position: absolute;
   height: 6px;
-  background-color: #202C4B;
+  background-color: #202c4b;
   border-radius: 5px;
   top: 0;
   left: 0;
@@ -931,15 +991,18 @@ footer a:hover {
 }
 
 .step.active {
-  background-color: #202C4B;
-  border: 3px solid #202C4B;
+  background-color: #202c4b;
+  border: 3px solid #202c4b;
 }
-@media(max-width:640px){
-  .step{
+@media (max-width: 640px) {
+  .step {
     width: 16px;
     height: 16px;
   }
-  .progressbar{
-        height: 4px;
+  .progressbar {
+    height: 4px;
+  }
+  .recovery-container {
+    padding: 0 20px;
   }
 }
