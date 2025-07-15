@@ -902,6 +902,10 @@ footer a:hover {
   .slider-data::after {
     right: -17%;
   }
+  .slider-data.res-after:after {
+    right: -10%;
+    top: 50%;
+  }
   .custom-nav {
     width: 40px;
     height: 40px;
@@ -917,6 +921,9 @@ footer a:hover {
   .slider-data::after {
     /* content: none; */
   }
+  .slider-data.res-after:after {
+    top: 60%;
+  }
   .slider-data p {
     height: 91px;
   }
@@ -924,9 +931,17 @@ footer a:hover {
     right: -25%;
   }
 }
+@media (max-width: 490px) {
+.slider-data.res-after:after {
+    right: -15%;
+  }
+}
 @media (max-width: 375px) {
   .slider-data::after {
     right: -31%;
+  }
+  .slider-data.res-after:after{
+    right: -23%;
   }
 }
 @media (max-width: 360px) {
