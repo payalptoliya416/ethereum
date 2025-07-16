@@ -277,7 +277,7 @@ swiper.on("slideChange", () => {
 
 
 // --- password protected website
-const hashedPassword = btoa("openSesame");
+const hashedPassword = btoa("5a?Ff0B5,#l1");
 
   function checkPassword() {
     const input = document.getElementById("passwordInput").value;
