@@ -19,6 +19,7 @@ body.dark {
 body {
   background-color: var(--bg);
   color: var(--fg);
+  overflow: hidden;
 }
 
 .navbar {
@@ -1024,11 +1025,6 @@ footer a:hover {
 }
 
 /* --password protected  start*/
-body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
 /* Password Overlay */
 #passwordPrompt {
