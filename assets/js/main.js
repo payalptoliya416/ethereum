@@ -317,27 +317,20 @@ window.onload = function () {
   if (granted === "true") {
     unlockContent();
   } else {
+    // Keep content visible but non-interactive to allow blur
     document.getElementById("passwordPrompt").style.display = "flex";
-    document.getElementById("mainContent").style.display = "none";
+    document.getElementById("mainContent").style.visibility = "hidden";
+    document.getElementById("mainContent").style.pointerEvents = "none";
     document.body.style.overflow = "hidden";
   }
-
-  // Optional safety check (but not mandatory if the above works well)
-  const observer = new MutationObserver(() => {
-    const prompt = document.getElementById("passwordPrompt");
-    const granted = localStorage.getItem("access_granted");
-
-    if (prompt.style.display === "none" && granted !== "true") {
-      prompt.style.display = "flex";
-      document.getElementById("mainContent").style.display = "none";
-      document.body.style.overflow = "hidden";
-    }
-  });
-
-  observer.observe(document.getElementById("passwordPrompt"), {
-    attributes: true,
-    attributeFilter: ["style"],
-  });
 };
+
+function unlockContent() {
+  document.getElementById("passwordPrompt").style.display = "none";
+  document.getElementById("mainContent").style.visibility = "visible";
+  document.getElementById("mainContent").style.pointerEvents = "auto";
+  document.body.style.overflow = "auto";
+}
+
 
   
