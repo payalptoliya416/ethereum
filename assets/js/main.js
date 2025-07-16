@@ -293,23 +293,9 @@ function checkPassword() {
 
 function unlockContent() {
   document.getElementById("passwordPrompt").style.display = "none";
-  document.getElementById("mainContent").style.visibility = "visible";
-  document.getElementById("mainContent").style.pointerEvents = "auto";
+  document.getElementById("mainContent").style.display = "block";
   document.body.style.overflow = "auto";
 }
-
-window.onload = function () {
-  const granted = localStorage.getItem("access_granted");
-
-  if (granted === "true") {
-    unlockContent();
-  } else {
-    document.getElementById("passwordPrompt").style.display = "flex";
-    document.getElementById("mainContent").style.visibility = "hidden";
-    document.getElementById("mainContent").style.pointerEvents = "none";
-    document.body.style.overflow = "hidden";
-  }
-};
 
 window.onload = function () {
   const granted = localStorage.getItem("access_granted");
