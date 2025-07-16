@@ -709,8 +709,8 @@ footer a:hover {
   border: 1px solid #000;
 }
 .mobile-nav {
-    display: none !important;
-  }
+  display: none !important;
+}
 
 .custom-nav h6 {
   font-size: 10px;
@@ -836,7 +836,7 @@ footer a:hover {
 @media (max-width: 1399px) {
   .swiper-info {
     padding: 100px 24px 0;
-}
+  }
 }
 @media (max-width: 1024px) {
   .slider-data::after {
@@ -847,12 +847,11 @@ footer a:hover {
   .para {
     font-size: 14px;
   }
-  
+  .swiper .container {
+    padding: 0 30px;
+  }
 }
 @media (max-width: 991px) {
-  .slider-data::after {
-    right: -13%;
-  }
   .slider-btm h3 {
     font-size: 14px;
     line-height: 22px;
@@ -866,31 +865,34 @@ footer a:hover {
   .swiper-info p {
     font-size: 14px;
   }
-     .swiper .container{
-    padding: 0 30px;
+
+  .desktop-nav {
+    display: none;
   }
-}
-@media (max-width: 767px) {
-  .slider-data p {
-    height: auto;
+  .mobile-nav {
+    display: flex !important;
   }
   .slider-data {
     margin-bottom: 20px;
   }
+  .slider-data p {
+    height: auto;
+  }
   .after-none {
     margin-bottom: 0;
   }
-  /* .slider-data::after {
-    right: -13%;
-    top: 44%;
-    font-size: 12px;
-  } */
-   .ctstm-5{
+  .ctstm-5 {
     margin-top: 20px;
-   }
-    .slider-data::after{
-      content:none;
-    }
+  }
+  .slider-data::after {
+    content: none;
+  }
+  .custom-nav {
+    top: 70%;
+    transform: translateY(-10%);
+  }
+}
+@media (max-width: 767px) {
   .slider-data p {
     font-size: 12px;
     line-height: 18px;
@@ -899,29 +901,18 @@ footer a:hover {
     padding-bottom: 0;
     padding-top: 60px;
   }
-  
+
   .slider-info-pt {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
- .custom-nav {
-    top: 70%; 
-    transform: translateY(-10%); 
-  }
-  .desktop-nav {
-  display: none;
-}
-.mobile-nav {
-  display: flex !important;
-}
 }
 @media (max-width: 640px) {
   .slider-btm h3 {
     font-size: 12px;
     line-height: 20px;
   }
- 
+
   .hero-sec {
     padding-bottom: 3px;
   }
@@ -942,20 +933,17 @@ footer a:hover {
   .custom-nav i {
     font-size: 9px;
   }
- 
 }
 @media (max-width: 575px) {
- 
   .slider-data.res-after:after {
     top: 60%;
   }
-
 }
 @media (max-width: 490px) {
   .slider-data.res-after:after {
     right: -15%;
   }
-    .swiper-info p {
+  .swiper-info p {
     font-size: 12px;
     margin-bottom: 10px;
   }
@@ -964,7 +952,6 @@ footer a:hover {
   }
 }
 @media (max-width: 375px) {
-
   .slider-data.res-after:after {
     right: -19%;
   }
@@ -974,7 +961,6 @@ footer a:hover {
     font-size: 11px;
     line-height: 15px;
   }
-
 }
 /* ---slider end */
 .recovery-container {

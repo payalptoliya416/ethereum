@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
-  const isMobile = window.innerWidth <= 767;
+  const isMobile = window.innerWidth <= 991;
    const swiper = new Swiper(".mySwiper", {
       loop: false,
       speed: 600, 
