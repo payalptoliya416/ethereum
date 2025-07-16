@@ -1043,7 +1043,7 @@ footer a:hover {
 /* Password Box Styling */
 .password-box {
   background-color: white;
-  padding:30px 40px;
+  padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
@@ -1088,6 +1088,10 @@ footer a:hover {
   font-size: 14px;
   display: none;
 }
-
+@media (max-width: 575px) {
+  .password-box {
+    width: 282px;
+    padding: 22px 20px;
+  }
+}
 /* --password protected  end*/
-
