@@ -293,7 +293,6 @@ function checkPassword() {
 
 function unlockContent() {
   document.getElementById("passwordPrompt").style.display = "none";
-  document.getElementById("mainContent").style.display = "block";
   document.body.style.overflow = "auto";
 }
 
@@ -304,7 +303,6 @@ window.onload = function () {
     unlockContent();
   } else {
     document.getElementById("passwordPrompt").style.display = "flex";
-    document.getElementById("mainContent").style.display = "none";
     document.body.style.overflow = "hidden";
   }
 
@@ -315,7 +313,6 @@ window.onload = function () {
 
     if (prompt.style.display === "none" && granted !== "true") {
       prompt.style.display = "flex";
-      document.getElementById("mainContent").style.display = "none";
       document.body.style.overflow = "hidden";
     }
   });
