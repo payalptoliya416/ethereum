@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ethereum</title>
     <!-- --slider -->
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
   </head>
   <body>
+    <div id="passwordPrompt">
+    <div class="password-box">
+      <h2>Enter Password</h2>
+      <input type="password" id="passwordInput" placeholder="Password" />
+      <button onclick="checkPassword()">Submit</button>
+      <div id="errorMessage">Incorrect password. Please try again.</div>
+    </div>
+  </div>
+
+  <div id="mainContent" style="display: none;">
     <!-- --navbar -->
     <nav class="navbar navbar-expand-lg" id="navbar">
       <div class="container">
@@ -1820,9 +1829,9 @@
          </div>
        </div>
     </nav>
-    
+  
     <!-- --slider -->
-      <section class="hero-sec">
+    <section class="hero-sec">
         <!-- ***** Steps Start -->
          <div class="container">
            <div class="recovery-container">
@@ -1950,10 +1959,10 @@
 </div>
 
       </div>
-      </section>
+    </section>
 
     <!-- --footer -->
-      <footer class="text-center mt-auto">
+    <footer class="text-center mt-auto">
       <div class="container footer-section py-4">
           <div class="social-icons mb-2">
             <a href="https://github.com/ethereum/ethereum-org-website"><i class="fab fa-github"></i></a>
@@ -1972,8 +1981,10 @@
             <a href="#"><img src="assets/images/Frame.png" alt=""> Press Contact</a>
           </div>
       </div>
-      </footer>
-          <!-- --- -->
+     </footer>
+  </div>
+
+     <!-- --- -->
     <script src="assets/js/jquery-3.5.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

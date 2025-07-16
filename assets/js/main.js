@@ -274,3 +274,54 @@ updateProgress(swiper.activeIndex);
 swiper.on("slideChange", () => {
   updateProgress(swiper.activeIndex);
 });
+
+
+// --- password protected website
+const hashedPassword = btoa("openSesame");
+
+  function checkPassword() {
+    const input = document.getElementById("passwordInput").value;
+    const encodedInput = btoa(input);
+
+    if (encodedInput === hashedPassword) {
+      localStorage.setItem("access_granted", "true");
+      unlockContent();
+    } else {
+      document.getElementById("errorMessage").style.display = "block";
+    }
+  }
+
+  function unlockContent() {
+    document.getElementById("passwordPrompt").style.display = "none";
+    document.getElementById("mainContent").style.display = "block";
+    document.body.style.overflow = "auto";
+  }
+
+  window.onload = function () {
+    const granted = localStorage.getItem("access_granted");
+
+    if (granted === "true") {
+      unlockContent();
+    } else {
+      document.getElementById("passwordPrompt").style.display = "flex";
+      document.getElementById("mainContent").style.display = "none";
+      document.body.style.overflow = "hidden";
+    }
+
+    // Prevent dev tools bypass
+    const observer = new MutationObserver(() => {
+      const prompt = document.getElementById("passwordPrompt");
+      const granted = localStorage.getItem("access_granted");
+
+      if (prompt.style.display === "none" && granted !== "true") {
+        prompt.style.display = "flex";
+        document.getElementById("mainContent").style.display = "none";
+        document.body.style.overflow = "hidden";
+      }
+    });
+
+    observer.observe(document.getElementById("passwordPrompt"), {
+      attributes: true,
+      attributeFilter: ["style"],
+    });
+  };

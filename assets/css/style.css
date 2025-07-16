@@ -933,7 +933,7 @@ footer a:hover {
   }
 }
 @media (max-width: 490px) {
-.slider-data.res-after:after {
+  .slider-data.res-after:after {
     right: -15%;
   }
 }
@@ -941,7 +941,7 @@ footer a:hover {
   .slider-data::after {
     right: -31%;
   }
-  .slider-data.res-after:after{
+  .slider-data.res-after:after {
     right: -19%;
   }
 }
@@ -1022,3 +1022,75 @@ footer a:hover {
     padding: 0 20px;
   }
 }
+
+/* --password protected  start*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Password Overlay */
+#passwordPrompt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Password Box Styling */
+.password-box {
+  background-color: white;
+  padding:30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 320px;
+}
+
+.password-box h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #202224;
+}
+
+.password-box input[type="password"] {
+  padding: 8px 12px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.password-box button {
+  padding: 8px 25px;
+  font-size: 16px;
+  background-color: #202c4b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.password-box button:hover {
+  background-color: #32436ed7;
+}
+
+#errorMessage {
+  color: #ff4e4e;
+  margin-top: 10px;
+  font-size: 14px;
+  display: none;
+}
+
+/* --password protected  end*/
