@@ -228,30 +228,36 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
   // ---slider start
-  // const isMobile = window.innerWidth <= 575;
+  const isMobile = window.innerWidth <= 767;
    const swiper = new Swiper(".mySwiper", {
       loop: false,
       speed: 600, 
       pagination:false,
-      autoHeight: false,
+      autoHeight: isMobile,
     });
 
-    const prevBtn = document.querySelector(".custom-nav.prev");
-    const nextBtn = document.querySelector(".custom-nav.next");
+   const prevBtns = document.querySelectorAll(".custom-nav.prev");
+const nextBtns = document.querySelectorAll(".custom-nav.next");
 
-    function updateNavButtons() {
-      const isFirst = swiper.activeIndex === 0;
-      const isLast = swiper.activeIndex === swiper.slides.length - 1;
+function updateNavButtons() {
+  const isFirst = swiper.activeIndex === 0;
+  const isLast = swiper.activeIndex === swiper.slides.length - 1;
 
-      prevBtn.classList.toggle("hidden", isFirst);
-      nextBtn.classList.toggle("hidden", isLast);
-    }
+  prevBtns.forEach(btn => {
+    btn.style.visibility = isFirst ? "hidden" : "visible";
+  });
 
-    prevBtn.addEventListener("click", () => swiper.slidePrev());
-    nextBtn.addEventListener("click", () => swiper.slideNext());
+  nextBtns.forEach(btn => {
+    btn.style.visibility = isLast ? "hidden" : "visible";
+  });
+}
 
-    swiper.on("slideChange", updateNavButtons);
-    updateNavButtons();
+prevBtns.forEach(btn => btn.addEventListener("click", () => swiper.slidePrev()));
+nextBtns.forEach(btn => btn.addEventListener("click", () => swiper.slideNext()));
+
+swiper.on("slideChange", updateNavButtons);
+updateNavButtons();
+
   // ---slider end
 
   // --steps for slider
