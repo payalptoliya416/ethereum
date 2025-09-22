@@ -1433,6 +1433,7 @@ footer a:hover {
   cursor: pointer;
   display: inline-block;
   position: relative;
+  margin-left: 0;
 }
 .nav-list li a::after{
   position: absolute;
