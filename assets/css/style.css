@@ -1501,4 +1501,12 @@ footer a:hover {
   line-height: 16px;
   font-weight: 700;
 }
+@media(max-width:767px){
+  .bottom-fixed {
+    font-size: 14px;
+    line-height: 14px;
+    padding: 10px 24px;
+  }
+  
+}
 /* --bottom-fixed end */
