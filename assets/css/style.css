@@ -81,7 +81,7 @@ body {
   scroll-behavior: smooth;
 }
 
-@media (min-width: 1200px) and (max-width: 1599px) {
+/* @media (min-width: 1200px) and (max-width: 1599px) {
   .container {
     max-width: 1170px !important;
   }
@@ -91,8 +91,16 @@ body {
   .container {
     max-width: 1536px !important;
   }
-}
+} */
 
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px !important;
+  }
+}
+.container{
+  padding: 0 28px;
+}
 .navbar-brand img {
   max-width: 100%;
   width: 35px;
@@ -100,7 +108,7 @@ body {
 
 /* --navbar start */
 #navbar {
-  padding: 8px 16px;
+  padding: 8px 0px;
   display: flex;
   gap: 8px;
   align-items: center;
@@ -1506,7 +1514,6 @@ footer a:hover {
     font-size: 14px;
     line-height: 14px;
     padding: 10px 24px;
-  }
-  
+  }  
 }
 /* --bottom-fixed end */
