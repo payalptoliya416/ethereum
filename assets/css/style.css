@@ -360,7 +360,9 @@ footer {
   padding: 8px 0px 8px 12px;
   border-radius: 10px;
 }
-.language-change:hover,
+.language-change:hover{
+ color: #9357f4;
+}
 .language-change:focus {
   background-color: #ece0ff;
   color: #9357f4;
