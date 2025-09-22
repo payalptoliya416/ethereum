@@ -81,23 +81,12 @@ body {
   scroll-behavior: smooth;
 }
 
-/* @media (min-width: 1200px) and (max-width: 1599px) {
-  .container {
-    max-width: 1170px !important;
-  }
-}
-
-@media (min-width: 1599px) {
-  .container {
-    max-width: 1536px !important;
-  }
-} */
-
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px !important;
   }
 }
+
 .container{
   padding: 0 28px;
 }
