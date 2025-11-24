@@ -1487,25 +1487,3 @@ footer a:hover {
 }
 /* --footer-top--end */
 
-/* --bottom-fixed start */
-.bottom-fixed {
-  background-color: #6c24e0;
-  padding: 14px 24px;
-  border-radius: 999px;
-  color: white;
-  border: none;
-  position: fixed;
-  bottom: 30px;
-  right: -10px;
-  font-size: 16px;
-  line-height: 16px;
-  font-weight: 700;
-}
-@media(max-width:767px){
-  .bottom-fixed {
-    font-size: 14px;
-    line-height: 14px;
-    padding: 10px 24px;
-  }  
-}
-/* --bottom-fixed end */
